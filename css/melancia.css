@@ -1,3 +1,7 @@
+body{
+    background: radial-gradient(white, lightcyan);
+
+}
 .melancia{
     position: absolute;
     height: 500px;
