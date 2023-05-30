@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.efeitoGlitch:hover{
+    text-shadow: red -3px 0, cyan 3px 0;
+}
