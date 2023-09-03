@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Averia Serif Libre", serif;
+    color: #fff;
+    text-shadow: #000 0 0 10px;
+    background: #111;
+    overflow: hidden;
+}
+
+.Container::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: url("https://images.unsplash.com/photo-1595311182166-d63273ddc386?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODM3MjExMDI&ixlib=rb-4.0.3&q=85");
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.1;
+    filter: blur(6px);
+}
+
+.Quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 10rem);
+    transition: 1s;
+    transform: translate(-50%, -50%);
+
+    @media (min-width: 512px) {
+        left: 60%;
+    }
+
+    @media (min-width: 1024px) {
+        left: 65%;
+    }
+}
+
+.Quote_content {
+    position: relative;
+    z-index: 20;
+    display: inline-block;
+    max-width: 90%;
+    margin-bottom: 1.7rem;
+    font-size: 1.7rem;
+    /* text-wrap: balance; */
+    font-style: italic;
+    opacity: 0;
+
+    [data-animation] & {
+        animation: slide 10s;
+    }
+
+    @media (min-width: 512px) {
+        max-width: 60%;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 40%;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        font-size: 5.5rem;
+        opacity: 0.6;
+    }
+
+    &::before {
+        content: "“";
+        top: 4rem;
+        left: -2rem;
+        transform: translate(-100%, -100%);
+    }
+
+    &::after {
+        content: "”";
+        bottom: 2rem;
+        right: -2rem;
+        transform: translate(100%, 100%);
+    }
+}
+
+.Quote_autor {
+    position: absolute;
+    bottom: -2rem;
+    right: -0.7rem;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    transform: translate(4rem, 100%);
+
+    &:before {
+        content: "—";
+        margin-right: 0.7rem;
+    }
+}
+
+.QuoteImage {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: -25%;
+    height: 100vh;
+    width: auto;
+    opacity: 0;
+
+    [data-animation] & {
+        animation: slide 10s reverse;
+    }
+
+    @media (min-width: 512px) {
+        right: 0%;
+    }
+
+    @media (min-width: 1024px) {
+        right: 25%;
+    }
+}
+
+.Footer {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.Logo {
+    width: 100px;
+
+    @media (min-width: 1024px) {
+        width: 150px;
+    }
+}
+
+.Me {
+    color: #ccc;
+    margin-left: 20px;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    5% {
+        opacity: 1;
+        transform: translateX(-10%);
+    }
+    95% {
+        opacity: 1;
+        transform: translateX(10%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+}
