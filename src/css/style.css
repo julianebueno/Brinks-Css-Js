@@ -21,5 +21,7 @@ li:hover{
 a{
     padding: .5em;
     color: black;
-    width: 100%;
+}
+small{
+    align-self: center;
 }
